@@ -5,12 +5,12 @@ class LawsController < ApplicationController
   # GET /laws
   def index
    @laws = Law.all
-   render json: @laws
+   render(json: @laws)
   end
 
   # GET /laws/1
   def show
-   render json: @law
+   render(json: @law)
   end
   
   
@@ -24,6 +24,4 @@ class LawsController < ApplicationController
   params.require(:law).permit(:name, :description)
   end
   
-end
-
 end
