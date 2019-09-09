@@ -1,6 +1,8 @@
 
 Law.destroy_all
 Recipe.destroy_all
+User.destroy_all
+Favorite.destroy_all
 
 
 # Law seeds
@@ -25,3 +27,17 @@ tomatosoup38 = Recipe.create(name: 'Tomato Soup with "Grilled Cheese" Ravioli', 
 escolar43 = Recipe.create(name: 'Escolar with Strawberry Salsa', description: "Escolar is a very rich fish-- so rich, in fact, that one should not consume more than six ounces of it in one sitting. When it's cooked correctly (over a low flame to render out oils) it tastes really good. The fish is both mild and oily, so it serves as both fat and canvas.", yield: 6, ingredients: "1 pint strawberries (hulled and diced), 1/4 red onion (finely diced), 1/2 red onion (finely diced), 1/2 jalapeño pepper (seed and ribs removed, finely diced), juice of 1/2 a lime, 1/2 cup loosely packed fresh cilantro (chopped), 1 teaspoon Kosher salt, 1/2 teaspoon sugar,1/2 teaspoon ground cumin, 2 1/4 pounds escolar fillets, Kosher salt to taste", instructions: "To make the strawberry salsa, place all ingredients but the escolar fillets and extra Kosher salt in a nonreactive bowl. Toss to combine, and chill until ready to serve.     To make the fish, pat the fish dry with a paper towel. Cut the fish into 18 equal pieces, each about 1 inch thick. Liberally salt both sides of each piece.   Place the fish in a dry cast-iron skillet over low heat. The fish is so oily that it is best to cook it slowly to render out the fat, just like cooking bacon. Cook the pieces on one side until barely golden (about 7 minutes), then flip using a spatula and cook for an additional 7 minutes on the opposite side. Transfer the fish to a cutting board and let it rest for 2 minutes.     To plate, place 3 cut pieces of fish on each plate. Using a slotted spoon, place a scoop of salsa on top of the fish.", law_id: pbj.id)
 
 dacquoise77 = Recipe.create(name: 'Milk and Dark Chocolate Dacquoise', description: "This is inspired by the pastry chef Marc Aumont. It is essentially a vertically oriented mash up of milk chocolate buttercream, dark chocolate meringue shards, and crunchy salty hazelnuts.", ingredients: "3 egg whites, 1/4 cup sugar, 1 teaspoon instant coffee granules, 1 teaspoon unsweetened cocoa powder, 1/2 c (1 stick) unsalted butter (room temperature), 1/4 cup confestioners' sugar, 1/2 cup milk chocolate chips, 1 tablespoons unsweetened cocoa powder, 1/4 teaspoons Kosher salt", instructions: "To make the dark chocolate meringue, preheat the oven to 200ºF. Line a sheet pan with parchment paper.   Add the egg whites to the bowl of a stand mixer fitted with the whisk attachment and start the mixer at medium speed. Once the white are very frothy, very slowly add the sugar, increase the speed to the highest setting, and beat just until stiff shiny peaks have formed (about 7-8 minutes).   Meanwhile, combine the instant coffee and water in a small bowl and stir until dissolved. When the whites are at stiff peak, and with the mixer still running, slowly add the coffee mixture to the egg whites.   Remove the bowl from the stand mixer. Using a rubber spatula, gently fold the cocoa powder into the eg whites just until no streaks remain; the egg whites will deflate a bit, but that's okay. Gently pour the mixture onto the lined sheet pan, then use a rubber spatula to smooth the meringue mixture into a very this, even sheet (less than 1/4 inch thick and covering most of the pan.   Bake in the low oven until the entire sheet looks dry, dull and crisp (like soil in a plant that needs to be watered), aobut one hour. Do not touch it or open the oven door. Turn the oven off and leave the pa in the oven for an additional hour.     To make the milk chocolate buttercream, cream the butter and confectioners' sugar in a stand mixer fitted with a paddle attachment until the mixture lightens, aobut 5 minutes.   Put the chocolate chips in a small bowl and melt in the microwave on the lowest setting for about 2 minutes, stopping to stir every 30 seconds, until it's smooth and just melted. Do not overheat!   Add the chocolate to the butter mixture, a couple tablespoons at a time, then mix it through on high speed, turning off the mixer to add more chocolate until all of the chocolate is incorporated.   Add the cocoa powder and salt, scrape down the sides of the bowl with a rubber spatula, and mix until smooth.     To assemble the dacquoise, place the meringue, face down, on a clean, dry work surface, baking mat side up. Carefully peel from the meringue.     To plate it, place a dollop of buttercream on each plate. Break the meringue into shards and anchor them vertically in the buttercream, distributing them equally on each plate. Sprinkle chopped hazelnuts over each plate.", law_id: coffee.id)
+
+
+
+
+
+
+
+#user seeds
+me = User.create(name: "Mackenzie")
+jack = User.create(name: "Jack")
+
+#favorite seed
+
+mechocolate = Favorite.create(user_id: me.id, recipe_id: dacquoise77.id)
