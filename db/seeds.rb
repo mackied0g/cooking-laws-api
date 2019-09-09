@@ -1,3 +1,7 @@
+Law.destroy_all
+Recipe.destroy_all
+
+
 # Law seeds
 pbj = Law.new(name: "Law of Peanut Butter and Jelly", description: "Fat meets Fruit")
 coffee = Law.new(name: "Law of Coffee, Cream and Sugar", description: "Bitter meets Fat and Sweet")
