@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-        before_action :set_favorite, only: [:show, :update, :destroy]
+        before_action :set_favorite, only: [:show, :create, :update, :destroy]
 
     # GET /favorites
     def index
@@ -45,7 +45,7 @@ class FavoritesController < ApplicationController
     
     # Only allow a trusted parameter “white list” through.
     def favorite_params
-     params.require(:favorite).permit(:title, :content, :slug)
+     params.require(:favorite).permit(:user_id. :law_id)
     end
 
 end
