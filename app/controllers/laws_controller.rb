@@ -5,12 +5,12 @@ class LawsController < ApplicationController
   # GET /laws
   def index
    @laws = Law.all
-   render(json: @laws)
+   render(json: @laws, include: :recipes) #relationships done for you!
   end
 
-  # GET /laws/1
+  
   def show
-   render(json: @law)
+   render(json: @law, include: :recipes)
   end
   
   
