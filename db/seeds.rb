@@ -1,8 +1,5 @@
-
 Law.destroy_all
 Recipe.destroy_all
-User.destroy_all
-Favorite.destroy_all
 
 
 # Law seeds
@@ -49,3 +46,6 @@ jack = User.create(name: "Jack")
 #favorite seed
 
 mechocolate = Favorite.create(user_id: me.id, recipe_id: dacquoise77.id)
+
+
+testComment = Comment.create!(content: "Wonderful.", user: "Ina Garten", recipe_id: dacquoise77.id)
