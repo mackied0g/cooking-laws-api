@@ -14,11 +14,11 @@ class LawsController < ApplicationController
   end
   
   def create
-    @law = law.new(law_params)
+    @law = Law.new(law_params)
       if @law.save
-        render json: @law, status: :created, location:        api_v1_law_url(@law)
+        render(json: @law)
       else
-        render json: @law.errors, status: :unprocessable_entity
+        render(json: @law.errors, status: :unprocessable_entity)
       end
   end
   
