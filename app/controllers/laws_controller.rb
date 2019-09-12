@@ -10,7 +10,16 @@ class LawsController < ApplicationController
 
   
   def show
-   render(json: @law, include: :recipes)
+   render(json: @law, include: { recipes: { include: :comments } })
+  end
+  
+  def create
+    @law = law.new(law_params)
+      if @law.save
+        render json: @law, status: :created, location:        api_v1_law_url(@law)
+      else
+        render json: @law.errors, status: :unprocessable_entity
+      end
   end
   
   
@@ -21,7 +30,7 @@ class LawsController < ApplicationController
   end
   # Only allow a trusted parameter “white list” through.
   def law_params
-  params.require(:law).permit(:name, :description)
+  params.permit(:name, :description)
   end
   
 end
