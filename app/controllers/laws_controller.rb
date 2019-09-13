@@ -1,6 +1,6 @@
 class LawsController < ApplicationController
     
-    before_action :set_law, only: [:show]
+    before_action :set_law, only: [:show, :update, :destroy]
 
   # GET /laws
   def index
@@ -22,13 +22,25 @@ class LawsController < ApplicationController
       end
   end
   
+  def destroy
+    @law.destroy
+    render json: {message: "Item deleted."}
+  end
+  
+  def update
+    if @law.update(law_params)
+        render json: @law
+    else
+        render json: @law.errors, status: :unprocessable_entity
+    end
+    end
   
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_law
    @law = Law.find(params[:id])
   end
-  # Only allow a trusted parameter “white list” through.
+  
   def law_params
   params.permit(:name, :description)
   end
